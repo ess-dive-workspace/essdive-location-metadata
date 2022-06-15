@@ -1,8 +1,6 @@
-## Term guide for locations metadata reporting format
+## Term guide for location metadata reporting format
 
 Below we list each element that can be found in ESS-DIVE's location metadata reporting format templates. We provide the name of each element, whether that element is required or optional, a brief definition, formatting requirements, and an example.
-
-
 
 ---
 

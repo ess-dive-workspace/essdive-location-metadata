@@ -2,7 +2,7 @@
 
 The locations metadata reporting format is intended to help researchers compile a minimal set of metadata about point locations.
 
-To begin using the format, we recommend that users first read through the reporting format’s [terminology guide](guide.md). The guide provides names, definitions, applicable units, and examples for each reporting format element that you will find in the reporting format templates.
+To begin using the format, we recommend that users first read through the reporting format’s [terminology guide](https://github.com/ess-dive-community/essdive-location-metadata/blob/main/term_list/guide.md). The guide provides names, definitions, applicable units, and examples for each reporting format element that you will find in the reporting format templates.
 
 After reviewing the guide, download a blank copy of the reporting format template. While you can choose to either download a CSV or Excel compatible version of the template, when uploading to ESS-DIVE, **we require that completed location metadata are uploaded in the non-proprietary CSV format**.
 

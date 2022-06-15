@@ -1,6 +1,0 @@
-"After filling out locations metadata template, delete row 1, row 3, row 6, and column A",,,,,,,,,,,,,,,,,
-,Submission_Contact_Name,Submission_Contact_Email,Location_ID,Description,Latitude,Longitude,Location_Alias,Parent_Location_ID,Projection,Measurement_Method,Elevation,UTC_Offset,Location_DateTime_Start,Location_DateTime_End,Institution,Country,Notes
-required_or_optional,required,required,required,required,required,required,optional,optional,optional,optional,recommended,optional,optional,optional,optional,optional,optional
-format,Free text,Free text,Free text,Free text,numeric,numeric,Free text,Free text,Free text,Free text,numeric,Numeric,YYYY-MM-DD HH:MM:SS,YYYY-MM-DD,Free text,Controlled vocabulary,Free text
-unit,N/A,N/A,N/A,N/A,decimal degrees,decimal degrees,N/A,N/A,N/A,N/A,meters,N/A,N/A,N/A,N/A,N/A,N/A
-example,Robert Crystal-Ornelas,rcrystalornelas@lbl.gov,AC-423,Hill slope that is seasonally covered in tall grasses. Soil samples are routinely collected in this location,37.874921,-122.252898,LBNL-hillslope,AC-400,WGS84,Garmin eTrex 10,396.24,-7,2019-03-01 9:00:01,2020-01-23,Lawrence Berkeley National Laboratory,United States of America,"Soil sampling has been discontinued at this location, but were taken quartely when in use."

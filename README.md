@@ -7,7 +7,8 @@ This reporting format was developed by synthesizing the requirements for reporti
 
 ## Quickstart Guide
   1. **Read** reporting format [instructions](instructions.md) to understand how to fill out templates.
-  2. **Download** blank copy of [reporting format template](https://github.com/ess-dive-community/essdive-location-metadata/tree/main/templates)
+  2. **Review** our [terminology guide](term_list/guide.md) to understand definitions of each term used in the templates.
+  3. **Download** blank copy of [reporting format template](https://github.com/ess-dive-community/essdive-location-metadata/tree/main/templates)
   4. **Save** your completed locations metadata template as a CSV file and upload to ESS-DIVE as part of your dataset.
 
 ## How to contribute

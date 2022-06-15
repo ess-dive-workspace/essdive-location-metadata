@@ -21,4 +21,4 @@ This repository content is licensed for use under the [CC BY 4.0 license](https:
 Funding for the development of ESS-DIVE's locations metadata reporting format was provided by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research, Climate and Environmental Science Division, Data Management program under contract number DE-AC02-05CH11231.
 
 ## Recommended citation
-Crystal-Ornelas, R.; O'Ryan, D.; Christianson, D.; Hendrix, V. C.; Agarwal, D.; Varadharajan, C. (2022). ESS-DIVE Reporting Format for Location Metadata. ESS-DIVE.
+Crystal-Ornelas R; O'Ryan D; Christianson D; Hendrix V C; Agarwal D; Varadharajan C (2022): ESS-DIVE Reporting Format for Location Metadata. ESS-DIVE repository. Dataset. doi: 10.15485/1865730

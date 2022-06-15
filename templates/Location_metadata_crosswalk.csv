@@ -1,0 +1,68 @@
+Location metadata reporting format field,FLMD,Sample_ID,Leaf_Physiology,Soil_Respiration,Hydrologic_monitoring,SFA_sensor_template,SFA_location_template,Amplicon,BADM (https://ameriflux.lbl.gov/data/badm/badm-standards/),CF Conventions standard name table v77 (https://cfconventions.org/Data/cf-standard-names/77/build/cf-standard-name-table.html),snotel (https://wcc.sc.egov.usda.gov/nwcc/sensorhistory),DarwinCore (https://dwc.tdwg.org/terms/#dc:type),Federal Geographic Data Committee (https://www.fgdc.gov/metadata/csdgm-standard) (PAGE 129),"FGDC Extension: ‚ÄúFGDC Biological Data Profile of
+ the Content Standard for Digital Geospatial Metadata",iSamples,OGC observations and measurements v2.0 (https://www.ogc.org/standards/om#downloads),FRAMES (from downloaded data package the E-Field_Log Locations tab),USGS - National Water Dashboard
+Location_ID,N/A,locationID,siteIdentifier,N/A,Site_ID,Location_ID,Location_ID,N/A,SITE_ID,N/A,ID,locationID,N/A,N/A,placeName,id,Location_ID,Site identification number
+Location_Alias,N/A,N/A,N/A,N/A,Site_Name,N/A,Location_Name,N/A,SITE_NAME,N/A,Sites_Used_Names,Location,N/A,N/A,SamplingSite,N/A,Site_ID,Site name
+Parent_Location_ID,N/A,N/A,N/A,N/A,Site_Type,N/A,N/A,N/A,N/A,N/A,Sites_Used_Names,N/A,N/A,N/A,N/A,N/A,MEAS_POS_ID,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,Location_Alias,N/A,N/A,N/A,Name,N/A,N/A,N/A,N/A,N/A,Plot_ID,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,Parent_Location_ID,N/A,N/A,N/A,All_Sites_Names,N/A,N/A,N/A,N/A,N/A,Tree_ID,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+Latitude,Latitude,decimalLatitude,latitude,Latitude,Latitude,N/A,Latitude,N/A,LOCATION_LAT,latitude,Latitude,decimalLatitude,Coordinate_y_Value,North_Bounding_Coordinate,latitude,N/A,y,DMS latitude
+Longitude,Longitude,decimalLongitude,longitude,Longitude,Longitude,N/A,Longitude,N/A,LOCATION_LONG,longitude,Longitude,decimalLongitude,Coordinate_x_Value,South_Bounding_Coordinate,longitude,N/A,x,DMS longitude
+BOUNDING BOX OPTIONAL,Northwest_Latitude_Coordinate,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,projection_x_coordinate,N/A,geodeticDatum,Coordinate_Sysyem,West_Bounding_Coordinate,GeospatialDDCoordLocation,N/A,DATUM_TYPE,Decimal latitude
+N/A,Northwest_Longitude_Coordinate,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,projection_y_coordinate,N/A,N/A,Horizontal_Coordinate_System_Definition,East_Bounding_Coordinate,N/A,N/A,ORIGIN,Decimal longitude
+N/A,Southeast_Latitude_Coorindate,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,coordinateUncertaintyInMeters,N/A,Bounding_Coordinates,N/A,N/A,DATUM_TYPE,latitude-longitude method
+N/A,Southeast_Longitude_Coordinate,N/A,N/A,N/A,N/A,N/A,Lat_Long_Measurement_Method,N/A,N/A,N/A,N/A,coordinatePrecision,N/A,N/A,N/A,N/A,N/A,latitude-longitude accuracy
+N/A,N/A,geolocationInstrument,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,verbatimCoordinates,N/A,N/A,N/A,N/A,N/A,latitude-longitude datum
+projection,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,verbatimLatitude,N/A,N/A,N/A,N/A,N/A,decimal latitude-longitude datum
+measurement_method,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,verbatimLongitude,Vertical_Coordinate_System_Definition,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,verbatimCoordinateSystemProperty,Coordinate_Point,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Bounding_Coordinates,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Number_of_Points,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Coordinate_z_Value,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Nadir_Latitude,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Nadir_Longitude,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Coordinate_XY_Units,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Georeferencing_Information,N/A,N/A,N/A,N/A,N/A
+elevation,N/A,elevation unit,elevation,N/A,Elevation,N/A,Topographical_Elevation,N/A,LOCATION_ELEV,N/A,Elevation_ft,verbatimLocality,N/A,N/A,elevation,N/A,Elevation,Altitude of Gage/land surface
+N/A,N/A,minimumElevationInMeters,N/A,N/A,Elevation_Reference,N/A,N/A,N/A,N/A,N/A,N/A,minimumElevationInMeters,N/A,Altitude_Minimum,N/A,N/A,Height_or_Depth,Method altitude determined
+N/A,N/A,maximumElevationInMeters,N/A,N/A,Elevation_Unit,N/A,N/A,N/A,N/A,N/A,N/A,maximumElevationInMeters,N/A,Altitude_Maximum,N/A,N/A,N/A,Altitude accuracy
+N/A,N/A,minimumDistanceAboveSurfaceInMeters,N/A,N/A,N/A,N/A,N/A,N/A,N/A,height,N/A,verbatimElevation,N/A,Altitude_Distance_Units,N/A,N/A,N/A,Altitude datum
+N/A,N/A,maximumDistanceAboveSurfaceInMeters,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,minimumDistanceAboveSurfaceInMeters,N/A,Bounding_Altitudes,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,MaximumDistanceAboveSurfaceInMeters,N/A,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+description,N/A,locationDescription,N/A,N/A,N/A,N/A,Description,N/A,N/A,N/A,N/A,N/A,N/A,Description_of_Geographic_Extent,N/A,N/A,Location_Type (type of location chosen from a list),Site type
+UTC_Offset,N/A,localEnvironmentalContext,N/A,N/A,N/A,Deployment_Environment,Location_Activity,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Location_Description (free text),N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,Location_Category,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Location_Geomorphology_Descrip,N/A
+N/A,UTC_Offset,N/A,N/A,N/A,UTC_Offset,N/A,N/A,N/A,UTC_OFFSET,N/A,N/A,N/A,N/A,N/A,N/A,N/A,UTC_TIMESTEP_OFFSET,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Habitat,N/A,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,LOCATION_COMMENT OR SITE_DESC,N/A,N/A,locationRemarks,N/A,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,SITE_DESC,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+Submission_contact_name,Notes,N/A,N/A,Notes,Notes,Notes,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,type,comments,N/A
+Submission_contact_email,N/A,country,N/A,,N/A,N/A,Geographic_Region,N/A,COUNTRY,region,N/A,country,Mission_Significant_Event,N/A,N/A,context,N/A,Country
+Notes,N/A,biome,N/A,N/A,N/A,N/A,N/A,N/A,STATE,N/A,State,stateProvince,N/A,N/A,N/A,featureOfInterest,N/A,Agency
+Country,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,TERRAIN,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,County
+Location_Start/End,N/A,N/A,N/A,N/A,N/A,N/A,Years_Data_Collected,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,District
+institution,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,SUBMISSION_CONTACT_NAME,N/A,N/A,N/A,Point_of_Contact,N/A,N/A,N/A,N/A,State
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,SUBMISSION_CONTACT_EMAIL,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Land net location description
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Name of location map
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,LOCATION_DATE_START,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Scale of location map
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,institution,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Subbasin hydrologic unit
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,platform_id,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Drainage basin
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,platform_name,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Topographic setting
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,area_type,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Flags for instruments at site
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Date of first construction
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,higherGeography,N/A,N/A,N/A,N/A,N/A,Date site established or inventoried
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,continent,N/A,N/A,N/A,N/A,N/A,Drainage area
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,countryCode,N/A,N/A,N/A,N/A,N/A,Contributing drainage area
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,County,county,N/A,N/A,N/A,N/A,N/A,Time Zone abbreviation
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,municipality,N/A,N/A,N/A,N/A,N/A,Site honors Daylight Savings Time
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,locality,N/A,N/A,N/A,N/A,N/A,Data-other GW files
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,National aquifer
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Local aquifer
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Local aquifer type
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Well depth
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Hole depth
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Source of depth data
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Project number

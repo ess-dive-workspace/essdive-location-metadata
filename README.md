@@ -1,7 +1,7 @@
 # ESS-DIVE Reporting Format for location metadata v 1.0.0
 
 ## About the reporting format
-ESS-DIVE's locations reporting format is intended to guide users in providing a minimal set of metadata about locations.
+ESS-DIVE's location reporting format is intended to guide users in providing a minimal set of metadata about locations.
 
 This reporting format was developed by synthesizing the requirements for reporting locations from ESS-DIVE's existing reporting formats. We also took into consideration 12 other locations-related standards, conventions, guidelines, and reporting formats to determine which elements would constitute a minimal set of appropriate metadata.
 
@@ -18,7 +18,7 @@ We encourage users to contribute to this reporting format. Please submit any com
 This repository content is licensed for use under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/)
 
 ## Funding and acknowledgments
-Funding for the development of ESS-DIVE's locations metadata reporting format was provided by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research, Climate and Environmental Science Division, Data Management program under contract number DE-AC02-05CH11231.
+Funding for the development of ESS-DIVE's location metadata reporting format was provided by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research, Climate and Environmental Science Division, Data Management program under contract number DE-AC02-05CH11231.
 
 ## Recommended citation
 Crystal-Ornelas R; O'Ryan D; Christianson D; Hendrix V C; Agarwal D; Varadharajan C (2022): ESS-DIVE Reporting Format for Location Metadata. ESS-DIVE repository. Dataset. doi: 10.15485/1865730

@@ -6,5 +6,4 @@
 * Blank templates
   * [CSV version](https://github.com/ess-dive-community/essdive-location-metadata/blob/main/templates/Locations_metadata_template.csv)
   * [Excel version](https://github.com/ess-dive-community/essdive-location-metadata/blob/main/templates/Locations_metadata_template.xlsx)
-* [Crosswalk to other standards](crosswalk.md)
 * [License](LICENSE.md)

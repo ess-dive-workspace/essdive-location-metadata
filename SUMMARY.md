@@ -4,6 +4,6 @@
 * [Instructions](instructions.md)
 * [Term guide](term_list/guide.md)
 * Blank templates
-  * [CSV version](https://github.com/ess-dive-community/essdive-location-metadata/blob/main/templates/Location_metadata_template.csv)
-  * [Excel version](https://github.com/ess-dive-community/essdive-location-metadata/blob/main/templates/Location_metadata_template.xlsx)
+  * [CSV version](/templates/Location_metadata_template.csv)
+  * [Excel version](templates/Location_metadata_template.xlsx)
 * [License](LICENSE.md)

@@ -41,7 +41,7 @@ For non-point locations (see below), the same CRS must be used for the required 
 ## Elevation and vertical position
 Elevation is the height of the location relative to a standardized datum, typically sea level. If provided, the elevation datum must be specified using the predefined controlled vocabulary.
 
-Vertical position is the height or depth above a local reference, typically the ground or water surface. If the vertical position reference is not the ground surface, it must be specified.
+Vertical position is the height / altitude or depth above a local reference, typically the ground or water surface. If the vertical position reference is not the ground surface, it must be specified.
 
 Distances above the reference (heights) are positive and those below the reference (depths) are negative.
 

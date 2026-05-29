@@ -23,7 +23,7 @@ The location reporting format should not be used for the following:
 - Designating the location as a point, curve (line), or surface (polygon).
 - Providing a short location description.
 - When publishing location metadata on ESS-DIVE, ensure you include the following:
-    - Within the File Level Metadata file, the standard for each location metadata reporting format related file should be **"ESS-DIVE Location v1"**.
+    - Within the File Level Metadata file, the standard for each location metadata reporting format related file should be **"ESS-DIVE Location v2"**.
     - Include the keyword **"ESS-DIVE Location Metadata Reporting Format"** within the dataset metadata Keywords section.
 
 ## Coordinates and Coordinate reference systems (CRS)

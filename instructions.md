@@ -10,7 +10,7 @@ The location reporting format should not be used for the following:
 
 ## Resources
 - [Quick Start Guide](QuickStartGuide.md)
-- [Term Guide](term_list/guide.md)
+- [Term Guide](term_guide.md)
 
 ## Format
 - Comma delimited file (.csv) following the [CSV reporting format](https://github.com/ess-dive-workspace/essdive-csv-structure)

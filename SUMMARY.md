@@ -3,7 +3,7 @@
 * [Overview](README.md)
 * [Instructions](instructions.md)
 * [Quick Start Guide](QuickStartGuide.md)
-* [Term Guide](term_list/guide.md)
+* [Term Guide](term_guide.md)
 * [Controlled Vocabulary](ControlledVocabulary.md)
 * Blank templates
   * [CSV version](/templates/location_metadata_template.csv)

@@ -7,7 +7,7 @@ This reporting format was developed by synthesizing the requirements for reporti
 
 ## Getting Started
   1. **Read** reporting format [instructions](instructions.md) and [quick start guide](QuickStartGuide.md) to understand how to fill out the template.
-  2. **Review** our [terminology guide](term_list/guide.md) and [controlled vocabularies](ControlledVocabulary.md) to understand definitions and requirements of each term used in the templates.
+  2. **Review** our [terminology guide](term_guide.md) and [controlled vocabularies](ControlledVocabulary.md) to understand definitions and requirements of each term used in the templates.
   3. **Download** a blank copy of [reporting format template](templates).
   4. **Save** your completed locations metadata template as a CSV file and upload to ESS-DIVE as part of your dataset.
 

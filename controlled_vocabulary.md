@@ -69,17 +69,12 @@ The elevation_datum controlled vocabulary is based upon [CUASHI VerticalDatumCV]
     - Definition: The elevation datum is known, but not in the predefined list. Provide the known elevation datum in the notes field.
 
 ### vertical_position_reference
-- ground_surface
-    - Definition: local ground surface 
-- well_casing_top
-    - Definition: top of a well casing
-- water_bed
-    - Definition: bed or bottom of a water body (e.g., lake, river, stream)
-- water_surface
-    - Definition: surface of a water body (e.g., lake, river, stream)
-- mean_sea_level
-    - Definition: mean sea level
-- unknown
-    - Definition: The vertical position reference is unknown.
-- other
-    - Definition: The vertical position reference is known, but not in the predefined list. Provide the known vertical position reference in the notes field.
+|Controlled Vocabulary|Definition|
+|:----------------------------------------------------|:----------------------------------------------------|
+| ground_surface | local ground surface |
+| well_casing_top | top of a well casing |
+| water_bed | bed or bottom of a water body (e.g., lake, river, stream) |
+| water_surface | surface of a water body (e.g., lake, river, stream) |
+| mean_sea_level | mean sea level |
+| unknown | The vertical position reference is unknown. |
+| other | The vertical position reference is known, but not in the predefined list. Provide the known vertical position reference in the notes field. |

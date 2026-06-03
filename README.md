@@ -1,5 +1,5 @@
 # ESS-DIVE Reporting Format for Location Metadata v2.0.0
-This reporting format is currently under revision. If you are interested in reviewing and providing feedback, please reach out to ESS-DIVE at ess-dive-support _at_ lbl.gov.
+This reporting format is currently **under revision**. If you are interested in reviewing and providing feedback, please reach out to ESS-DIVE at ess-dive-support _at_ lbl.gov.
 ## About the Reporting Format
 ESS-DIVE's Location Metadata reporting format provides metadata about point and non-point locations.
 

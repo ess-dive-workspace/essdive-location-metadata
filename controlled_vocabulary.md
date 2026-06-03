@@ -33,6 +33,7 @@ You can use any [EPSG code](https://epsg.io/) identified by its URL, below are c
 | local | A local CRS that may or may not be geo-referenced. Provide details in the notes field. Example: 10x10 grid within a plot that are referenced with grid cells identified by A-J along one axis and 1-10 along the other axis. |
 
 ### alt_coordinate_unit
+The controlled vocabulary for the unit is based on the [Unified Code of Unified Measurements (UCUM)](https://ucum.org/ucum).
 |Controlled Vocabulary|Definition|
 |:-----------------|:-----------------|
 | meter | Definition: meter. UCUM Code: m |

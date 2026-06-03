@@ -2,10 +2,8 @@
 
 * [Overview](README.md)
 * [Instructions](instructions.md)
-* [Quick Start Guide](QuickStartGuide.md)
+* [Quick Start Guide](quick_start_guide.md)
 * [Term Guide](term_guide.md)
-* [Controlled Vocabulary](ControlledVocabulary.md)
-* Blank templates
-  * [CSV version](/templates/location_metadata_template.csv)
-  * [Excel version](/templates/location_metadata_template.xlsx)
+* [Controlled Vocabulary](controlled_vocabulary.md)
+* [Template](template_locations.csv)
 * [License](LICENSE.md)

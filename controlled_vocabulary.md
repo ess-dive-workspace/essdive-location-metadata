@@ -11,6 +11,7 @@ Controlled vocabularies are available for the following elements:
 ---
 
 ### location_shape
+The `location_shape` controlled vocabulary is based on the [Open Geospatial Consortium Observations and Measurements Standard (OGC 20-082r4 (v3.0)](https://docs.ogc.org/as/20-082r4/20-082r4.html). See [Quick Start Guide](quick_start_guide.md) and [Instructions](instructions.md) for more details.
 |Controlled Vocabulary|Definition|Examples|
 |:-----------------|:-----------------|:-----------------|
 | point | 0-Dimension geometry of a point. |sample, temperature sensor, stream gauge, water quality station, weather station, tree, shrub, fungal fruiting body |
@@ -33,13 +34,13 @@ You can use any [EPSG code](https://epsg.io/) identified by its URL, below are c
 | local | A local CRS that may or may not be geo-referenced. Provide details in the notes field. Example: 10x10 grid within a plot that are referenced with grid cells identified by A-J along one axis and 1-10 along the other axis. |
 
 ### alt_coordinate_unit
-The controlled vocabulary for the unit is based on the [Unified Code of Unified Measurements (UCUM)](https://ucum.org/ucum).
+The `alt_coordinate_unit` controlled vocabulary is based on the [Unified Code of Unified Measurements (UCUM)](https://ucum.org/ucum).
 |Controlled Vocabulary|Definition|
 |:-----------------|:-----------------|
-| meter | Definition: meter. UCUM Code: m |
-| feet | Definition: feet (international). UCUM Code: [ft_i] |
-| degree | Definition: decimal degree. UCUM Code: deg | 
-| other | Definition: The alternate coordinate unit is not in the predefined list. Provide the alternate coordinate unit in the notes field. | 
+| meter | meter; UCUM Code: m |
+| feet | feet (international); UCUM Code: [ft_i] |
+| degree | decimal degree; UCUM Code: deg | 
+| other | The alternate coordinate unit is not in the predefined list. Provide the alternate coordinate unit in the notes field. | 
 
 ### elevation_datum
 The elevation_datum controlled vocabulary is based upon [CUASHI VerticalDatumCV](https://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=VerticalDatumCV).
@@ -51,7 +52,7 @@ The elevation_datum controlled vocabulary is based upon [CUASHI VerticalDatumCV]
 | NGVD29 | National Geodetic Vertical Datum of 1929 |
 | WGS84 | World Geodetic System 1984, [ESPG:4979](https://epsg.io/4979) vertical component |
 | unknown | The elevation datum is unknown. |
-| other | The elevation datum is known, but not in the predefined list. Provide the known elevation datum in the notes field. |
+| other | The elevation datum is known, but not in the predefined list. Provide the elevation datum in the notes field. |
 
 ### vertical_position_reference
 |Controlled Vocabulary|Definition|
@@ -62,4 +63,4 @@ The elevation_datum controlled vocabulary is based upon [CUASHI VerticalDatumCV]
 | water_surface | surface of a water body (e.g., lake, river, stream) |
 | mean_sea_level | mean sea level |
 | unknown | The vertical position reference is unknown. |
-| other | The vertical position reference is known, but not in the predefined list. Provide the known vertical position reference in the notes field. |
+| other | The vertical position reference is known, but not in the predefined list. Provide the vertical position reference in the notes field. |

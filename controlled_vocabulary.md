@@ -19,7 +19,7 @@ The `location_shape` controlled vocabulary is based on the [Open Geospatial Cons
 | surface | Enclosed, single 2-Dimension geometry, presenting the continuous image of an area. Polygon is an equivalent term in other geospatial specifications.| quadrant, plot, study site, station, watershed, region, field area, lake, reservoir, sea|
 
 ### alt_coordinate_reference_system
-You can use any [EPSG code](https://epsg.io/) identified by its URL, below are common examples. For custom CRS, use [WKT format](https://docs.ogc.org/is/18-010r11/18-010r11.pdf). For local CRS, representation in a WKT format is preferred; however, you can also use the option “local” and provide additional details in the notes field, e.g., the origin (0,0) geo-referenced coordinates.
+You can use any [EPSG code](https://epsg.io/) identified by its URL, below are common examples. For custom CRS, use [WKT format](https://docs.ogc.org/is/18-010r11/18-010r11.pdf) (pdf). For local CRS, representation in a WKT format is preferred; however, you can also use the option “local” and provide additional details in the notes field, e.g., the origin (0,0) geo-referenced coordinates.
 |Controlled Vocabulary|Definition|
 |:----------------------------------------------------|:----------------------------------------------------|
 | https://epsg.io/104602 | ESRI:104602 NAD 1983 (3D) |

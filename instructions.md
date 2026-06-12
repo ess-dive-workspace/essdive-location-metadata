@@ -30,9 +30,9 @@ The location reporting format should **not** be used for the following:
 ## Coordinates and Coordinate reference systems (CRS)
 A coordinate reference system (CRS) consists of a datum and optionally a projection. The Locations Metadata reporting format supports geo-rectified and also non-geo-rectified coordinate systems. Use geo-rectified coordinates where available.
 
-For a CRS with WGS84 datum, use the longitude / latitude terns in decimal degrees. N / E values are positive and S / W values are negative. Most common GPS-based apps use WGS84, i.e., coordinates from your cell phone are likely WGS84.
+For a CRS with WGS84 datum, use the `longitude` / `latitude` terms in decimal degrees. N / E values are positive and S / W values are negative. Most common GPS-based apps use WGS84, i.e., coordinates from your cell phone are likely WGS84.
 
-For all other CRS, all four alt_coordinate_* terms must be entered. For `alt_coordinate_reference_system`:
+For all other CRS, all four `alt_coordinate_*` terms must be entered. For `alt_coordinate_reference_system`:
 - For registered geo-referenced CRSs, use the EPSG URL in the predefined controlled vocabulary list or at https://epsg.io/
 - If a custom CRS is used, enter it in WKT format (pdf).
 - Non-geo-referenced location information can be provided (e.g., local Cartesian). Where possible, include a geo-referenced origin in the WKT definition, or a parent feature that is geo-referenced.

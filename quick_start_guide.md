@@ -33,6 +33,6 @@ Enter a brief description of the location, using the example descriptors above w
 
 ### Note that some terms are conditionally required.
 
-### See [Term Guide](term_list/guide.md) and [Instructions](instructions.md) for additional details.
+### See [Term Guide](term_guide.md) and [Instructions](instructions.md) for additional details.
 
 ## To publish files following this Location Metadata reporting format on ESS-DIVE, see Minimum Requirements in the [Instructions](instructions.md).

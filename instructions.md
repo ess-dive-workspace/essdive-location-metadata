@@ -6,7 +6,7 @@ Common earth science point and non-point location information is supported.
 
 The location reporting format should **not** be used for the following:
 - Observations where coordinates are the data, e.g., terrestrial laser scanning (point clouds)
-- Gridded or raster location information
+- Gridded or raster location information, e.g., model gridded inputs / outputs
 
 ## Resources
 - [Quick Start Guide](quick_start_guide.md)
@@ -23,6 +23,7 @@ The location reporting format should **not** be used for the following:
 - An actual or representative x / y position with respect to the earth's surface.
 - Designating the location as a point, curve (line), or surface (polygon).
 - Providing a short location description that includes example descriptors when applicable (see [Location Description](#location-description) section below).
+- Designation of the location confidence (high or low).
 - When publishing location metadata on ESS-DIVE, include the following:
     - Within the File Level Metadata file, the standard for each location metadata reporting format related file should be **"ESS-DIVE Location v2"**.
     - Include the keyword **"ESS-DIVE Location Metadata Reporting Format"** within the dataset metadata Keywords section.
@@ -38,6 +39,8 @@ For all other CRS, all four `alt_coordinate_*` terms must be entered. For `alt_c
 - Non-geo-referenced location information can be provided (e.g., local Cartesian). Where possible, include a geo-referenced origin in the WKT definition, or a parent feature that is geo-referenced.
 
 For non-point locations (see below), the same CRS must be used for the required representative x / y coordinates as the optional `location_coordinates`.
+
+In some cases, the position of the location may not be accurately known, for example historical records that indicate landmarks or political boundaries (a county). A `latitude` / `longitude` or x / y coordinate should be estimated and the `location_confidence` listed as low. 
 
 ## Elevation and vertical position
 `elevation` is the height of the ground surface at the location relative to a standardized datum, typically sea level. If `elevation` is provided, the `elevation_datum` must be specified using the controlled vocabulary.
@@ -62,7 +65,7 @@ Non-point locations are supported by choosing a `location_shape` of curve or sur
 
 Curves are used when the observation represents a linear physical feature like a stream course or depth interval. They are also used to define a collection of other related locations, like a transect of sampling points or quadrants.
 
-Surfaces are used when observations represent an area defined by a polygon, like a study plot or the face of a soil pit. A surface can also be used for a collection of locations. For example, a plot demarcated on the ground surface that contains vertical profiles and point observations.
+Surfaces are used when observations represent an area defined by a polygon or enclosed area (e.g., rectangle, circle, or environmental boundary), like a study plot, the face of a soil pit, or watershed. A surface can also be used for a collection of locations. For example, a plot demarcated on the ground surface that contains vertical profiles and point observations.
 
 For non-point locations, the `longitude` / `latitude` or `alt_coordinate_x` / `alt_coordinate_y` values are representative points.
 
@@ -73,13 +76,14 @@ Coordinates that define the curve or surface polygon can also be optionally prov
    - Curves: [[-121.50, 38.58],[-121.48, 38.59],[-121.46, 38.60]]. 
    - Surface: [[[-121.50, 38.58],[-121.48, 38.59],[-121.46, 38.60],[-121.50, 38.58]]]. The first and last coordinates must be the same to close the polygon. The order of points defining the polygon are counter-clockwise.
   
-2. **Option 2:** Within a separate file of the following types. The file name must end in “_locations.{ext}”
+2. **Option 2:** Within a separate file of the following types. The file name must end in “_locations.{ext}”. The file name(s) must also be listed in the File Level Metadata (FLMD) file with `ESS-DIVE Location v2` entered in the FLMD’s standard term.
    - json: following the [GeoJSON format RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Note: per the specification only use for WGS84 horizontal datum and WGS 84 reference ellipsoid for elevation datum. The `location_id` must be in the id geojson term. Only geometry types Point, LineString, and Polygon are supported.
    - kml / kmz: the `location_id` must be in the name term of a placemark element. Only geometry types Point, LineString, and Polygon are supported.
   
 ## Location Description
 A short description of the location should be provided in the `location_description` term. When possible, include descriptors like those in the table below.
 
-<img width="644" height="492" alt="Screenshot 2026-06-02 at 8 50 56 PM" src="https://github.com/user-attachments/assets/da71e533-b00f-4af9-939c-d51076fa50b8" />
+<img width="578" height="442" alt="Screenshot 2026-08-17 at 10 40 01 AM" src="https://github.com/user-attachments/assets/59d4b353-87da-4b0e-8423-9fc3b13cf6cc" />
+
 
 

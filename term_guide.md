@@ -1,6 +1,8 @@
 ## Term Guide
 
-The  Location Metadata Reporting Format terms are defined below, including  whether that term is required, a brief definition, formatting requirements, an example, and additional guidance. A single asterisk (*) below marks fields that are required. Two asterisks (**) mark fields that are conditionally required.
+The  Location Metadata Reporting Format terms are defined below, including  whether that term is required, a brief definition, formatting requirements, an example, and additional guidance. 
+
+A single asterisk (*) below marks terms that are required. Two asterisks (**) mark terms that are conditionally required.
 
 ### Terms of the reporting format:
 - [location_id](#location_id)*
@@ -9,18 +11,22 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 - [location_shape](#location_shape)*
 - [latitude](#latitude)**
 - [longitude](#longitude)**
+- [location_confidence](#location_confidence)*
 - [alt_coordinate_x](#alt_coordinate_x)**
 - [alt_coordinate_y](#alt_coordinate_y)**
 - [alt_coordinate_reference_system](#alt_coordinate_reference_system)**
 - [alt_coordinate_unit](#alt_coordinate_unit)**
 - [location_coordinates](#location_coordinates)
+- [location_accuracy](#location_accuracy)
 - [elevation](#elevation)
 - [elevation_datum](#elevation_datum)**
 - [vertical_position](#vertical_position)
+- [vertical_position_interval](#vertical_position_interval)
 - [vertical_position_reference](#vertical_position_reference)
 - [location_alias](#location_alias)
 - [parent_location_id](#parent_location_id)
 - [measurement_method](#measurement_method)
+- [location_supplemental_file_name](#location_supplemental_file_name)
 - [notes](#notes)
 
 ---
@@ -73,7 +79,7 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |unit|degree|
 |definition|Latitude of the location, in decimal degrees and in a coordinate reference system with WGS84 datum. Provide latitude in +/- notation, rather than North/South notation.|
 |example|37.8749|
-|additional guidance|Use `latitude` if the x coordinate of the position is measured in degrees in a coordinate reference system (CRS) with datum WGS84; otherwise use the `alt_coordinate_*` fields. For a `location_shape` of "point," the `latitude` value is considered the actual location. For a location with a `location_shape` of "curve" or "surface", the `latitude` value is considered a representative point (e.g., center point of region/shape). Report decimal places to the correct resolution of the instrument used to make the measurement and the characteristics of the location. For reference, 5 decimal places in decimal degrees is on the order of 1 meter in the mid-tropics, with smaller distances towards the poles, and longer distances toward the equator. The resolution of the measurement can depend on the instrument (e.g., cell phone, high-precision GPS) and the location (e.g., open areas with limited obstruction, mountainous areas, forested areas, cell phone coverage). There are multiple EPSG codes with WGS84 datum. `latitude` will be exported with [EPSG:4326](https://epsg.io/4326). |
+|additional guidance|Use `latitude` if the x coordinate of the position is measured in degrees in a coordinate reference system (CRS) with datum WGS84; otherwise use the `alt_coordinate_*` terms. For a `location_shape` of "point," the `latitude` value is considered the actual location. For a location with a `location_shape` of "curve" or "surface", the `latitude` value is considered a representative point (e.g., center point of region/shape). Report decimal places to the correct resolution of the instrument used to make the measurement and the characteristics of the location. For reference, 5 decimal places in decimal degrees is on the order of 1 meter in the mid-tropics, with smaller distances towards the poles, and longer distances toward the equator. The resolution of the measurement can depend on the instrument (e.g., cell phone, high-precision GPS) and the location (e.g., open areas with limited obstruction, mountainous areas, forested areas, cell phone coverage). There are multiple EPSG codes with WGS84 datum. `latitude` will be exported with [EPSG:4326](https://epsg.io/4326). |
 
 ### longitude
 |term|`longitude`|
@@ -84,6 +90,16 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |definition|Longitude of the location, in decimal degrees and in a coordinate reference system with WGS84 datum. Provide longitude in +/- notation, rather than East/West notation.|
 |example|-122.2528|
 |additional guidance|Use `longitude` if the y coordinate of position is measured in degrees in a coordinate reference system with datum WGS84; otherwise use the `alt_coordinate_*` variables. For a `location_shape` of "point," the longitude value is considered the actual location. For a location with a `location_shape` of "curve" or "surface", the `longitude` value is considered a representative point (e.g., center point of region/shape). Report decimal places to the correct resolution of the instrument used to make the measurement and the characteristics of the location. For reference, 5 decimal places in decimal degrees is on the order of 1 meter in the mid-tropics, with smaller distances towards the poles, and longer distances toward the equator. The resolution of the measurement can depend on the instrument (e.g., cell phone, high-precision GPS) and the location (e.g., open areas with limited obstruction, mountainous areas, forested areas, cell phone coverage). There are multiple EPSG codes with WGS84 datum. `longitude` will be exported with [EPSG:4326](https://epsg.io/4326). |
+
+### location_confidence
+|term|`location_confidence`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|required|
+|format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-location-metadata/blob/release-v2.0.0/controlled_vocabulary.md#location_confidence)|
+|unit|N/A|
+|definition|The confidence for the location coordinate information provided within the `latitude`, `longitude`, `alt_coordinate_x`, and `alt_coordinate_y` terms.|
+|example|high|
+|additional guidance|`location_confidence` is intended to capture a broad range of cases. Coordinates obtained from highly accurate geolocation tools (e.g., Trimble), phone GPS, or satellite imagery are typically considered high confidence. Coordinates estimated from landmark descriptions or political boundaries (e.g., sample was taken in Alameda County, CA) are considered low confidence. Additional positional accuracy information can be provided in `location_accuracy`.|
 
 ### alt_coordinate_x
 |term|`alt_coordinate_x`|
@@ -113,7 +129,7 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |unit|N/A|
 |definition|Coordinate reference system (CRS) used for `alt_coordinate_x` and `alt_coordinate_y`, and if provided, `location_coordinates`. |
 |example|https://epsg.io/26910|
-|additional guidance|Use the [EPSG (European Petroleum Survey Group)](https://epsg.io/) standard codes when possible. The most common EPSGs used by the ESS community are included in the controlled vocabulary list. If you are using an EPSG not listed, enter its URL. Use [WKT format (pdf)](https://docs.ogc.org/is/18-010r11/18-010r11.pdf) for a custom CRS. Most GIS software can output the CRS in WKT. Local CRS that are not geo-rectified can use either WKT format or the controlled vocabulary option “local” with details provided in the notes field.|
+|additional guidance|Use the [EPSG (European Petroleum Survey Group)](https://epsg.io/) standard codes when possible. The most common EPSGs used by the ESS community are included in the controlled vocabulary list. If you are using an EPSG not listed, enter its URL. Use [WKT format (pdf)](https://docs.ogc.org/is/18-010r11/18-010r11.pdf) for a custom CRS. Most GIS software can output the CRS in WKT. Local CRS that are not geo-rectified can use either WKT format or the controlled vocabulary option “local” with details provided in the notes term.|
 
 ### alt_coordinate_unit
 |term|`alt_coordinate_unit`|
@@ -121,7 +137,7 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |requirement|required conditionally; required if `alt_coordinate_x` and `alt_coordinate_y` are provided|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-location-metadata/blob/release-v2.0.0/controlled_vocabulary.md#alt_coordinate_unit)|
 |unit|N/A|
-|definition|Coordinate unit for `alt_coordinate_x` and `alt_coordinate_y` fields, and if provided, `location_coordinates`.|
+|definition|Coordinate unit for `alt_coordinate_x` and `alt_coordinate_y` terms, and if provided, `location_coordinates`.|
 |example|meter|
 |additional guidance|If the specified `alt_coordinate_reference_system` has a unit specified, repeat it here. Metre = meter. If the unit is not in the predefined list, use “other” and provide details in the notes.|
 
@@ -135,6 +151,16 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |example|[[-121.50, 38.58],[-121.48, 38.59],[-121.46, 38.60]]|
 |additional guidance|See [Instructions](instructions.md) for formatting of GeoJSON coordinates. Non-point coordinates may also be provided in a separate locations.{ext} file following GeoJSON (ext = json), Keyhole Markup Language (ext = kml), or zipped KML (ext = kmz) formats with additional specifications. See [Instructions](instructions.md) for required details. |
 
+### location_accuracy
+|term|`location_accuracy`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|free text|
+|unit|N/A|
+|definition|The accuracy for the location coordinate information provided within the `latitude`, `longitude`, `alt_coordinate_x`, `alt_coordinate_y`, and `location_coordinates` terms.|
+|example|+/- 2 centimeters|
+|additional guidance|Often this is a numerical estimate of accuracy from the tool you are using. This can also be estimated based on expert knowledge of the surrounding geographic features. Other examples include: +/- 0.05 degrees; accurate within meters.|
+
 ### elevation
 |term|`elevation`|
 |:----------------------------------------------------|:----------------------------------------------------|
@@ -143,7 +169,7 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |unit|meter|
 |definition|Elevation of the ground surface for the location, referenced to sea level (e.g., NAVD88).|
 |example|396.24|
-|additional guidance|If `elevation` is provided, enter the datum of the elevation measurement in the `elevation_datum` field (enter "unknown" if datum details are not available). For a `location_shape` of “point”, the `elevation` is considered an actual elevation. For a `location_shape` of “curve” and “surface”, provide a representative elevation. For measurements observed about the land surface (e.g., airborne or remote), report altitude using the `vertical_position` term.|
+|additional guidance|If `elevation` is provided, enter the datum of the elevation measurement in the `elevation_datum` term (enter "unknown" if datum details are not available). For a `location_shape` of “point”, the `elevation` is considered an actual elevation. For a `location_shape` of “curve” and “surface”, provide a representative elevation. For measurements observed about the land surface (e.g., airborne or remote), report altitude using the `vertical_position` term.|
 
 ### elevation_datum
 |term|`elevation_datum`|
@@ -151,7 +177,7 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |requirement|required conditionally; required if `elevation` is provided|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-location-metadata/blob/release-v2.0.0/controlled_vocabulary.md#elevation_datum) |
 |unit|N/A|
-|definition|The datum of the elevation field. |
+|definition|The datum of the elevation term. |
 |example|NAVD88|
 |additional guidance|If your datum is not in the predefined controlled vocabulary, provide “other” and provide details in the notes. Enter "unknown" if the datum is not known.|
 
@@ -161,9 +187,19 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |requirement|optional|
 |format|numeric|
 |unit|meter|
-|definition|Height / altitude (positive numbers) or depth (negative numbers) from ground surface, unless a different reference is specified in the `vertical_reference_position` field. One `vertical_position` is allowed for each location.|
+|definition|Height / altitude (positive numbers) or depth (negative numbers) from ground surface, unless a different reference is specified in `vertical_reference_position`. One `vertical_position` is allowed for each location.|
 |example|1.5|
-|additional guidance|If a location has multiple vertical positions, provide these as separate location entries.|
+|additional guidance|If a location has multiple vertical positions, provide these as separate location entries. If `vertical_position` is provided for a curve or surface, it will be considered representative.|
+
+### vertical_position_interval
+|term|`vertical_position_interval`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|formatted text, bottom position:top position|
+|unit|meter|
+|definition|A height / altitude (positive numbers) or depth (negative) interval that a location covers (curves or surfaces) or that is represented by the location (points) relative to the ground surface, unless a different reference is specified in `vertical_position_reference`. One `vertical_position_interval` is allowed for each location.|
+|example|-0.1:0|
+|additional guidance|`vertical_position_interval` should be used for locations with shape curve, like soil cores or depth intervals for soil moisture measurements. A `vertical_position_interval` may be provided for point location shapes to indicate a representative depth or height range. For example, a soil sample may be taken from a depth range. Note: take care to report the bottom and top position correctly, for example, a depth interval of 0-5cm below the ground surface is reported as -0.05:0.|
 
 ### vertical_position_reference
 |term|`vertical_position_reference`|
@@ -171,7 +207,7 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-location-metadata/blob/release-v2.0.0/controlled_vocabulary.md#vertical_position_reference)|
 |unit|N/A|
-|definition|Reference for the vertical_position field. If the vertical_position is not in reference to the ground surface, a vertical_position_reference must be specified.|
+|definition|Reference for the `vertical_position` and `vertical_position_interval` terms. If the position is not in reference to the ground surface, a `vertical_position_reference` must be specified.|
 |example|water_surface|
 |additional guidance|N/A|
 
@@ -205,13 +241,23 @@ The  Location Metadata Reporting Format terms are defined below, including  whet
 |example|Garmin eTrex 10|
 |additional guidance|Additional methods could include: cell phone, etc.|
 
+### location_supplemental_file_name
+|term|`location_supplemental_file_name`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|ree text; semicolon whitespace delimiter|
+|unit|N/A|
+|definition|Supplemental file(s) containing additional context or information regarding the location.|
+|example|well_log_5524.pdf|
+|additional guidance|These file(s) could include source information (e.g., for synthesized locations) and additional descriptive information not captured in other reporting format terms. If more than one file is listed, they should be separated by a semicolon and space.|
+
 ### notes
 |term|`notes`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|optional|
 |format|free text|
 |unit|N/A|
-|definition|Notes that can provide additional context to the location that are not captured in other fields.|
+|definition|Notes that can provide additional context to the location that are not captured in other terms.|
 |example|Soil sampling has been discontinued at this location, but were taken quarterly when in use.|
 |additional guidance|N/A|
 

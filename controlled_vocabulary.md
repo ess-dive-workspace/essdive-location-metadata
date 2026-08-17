@@ -1,8 +1,9 @@
 # Controlled Vocabulary for Location Metadata Reporting Format
-Below we list the controlled vocabularies for applicable elements that can be found in ESS-DIVE's location metadata reporting format templates.
+Below we list the controlled vocabularies for applicable terms that can be found in ESS-DIVE's location metadata reporting format template.
 
-Controlled vocabularies are available for the following elements:
+Controlled vocabularies are available for the following terms:
 - [location_shape](#location_shape)
+- [location_confidence](#location_confidence)
 - [alt_coordinate_reference_system](#alt_coordinate_reference_system)
 - [alt_coordinate_unit](#alt_coordinate_unit)
 - [elevation_datum](#elevation_datum)
@@ -18,8 +19,15 @@ The `location_shape` controlled vocabulary is based on the [Open Geospatial Cons
 | curve | 1-Dimension geometry, presenting the continuous image of a straight, curved, or segmented line. Line and line string are equivalent terms in other geospatial specifications.| transect, stream reach, flight line, ship track, gradient, well, borehole, depth interval, tower, depth profile, canopy profile, stream, river |
 | surface | Enclosed, single 2-Dimension geometry, presenting the continuous image of an area. Polygon is an equivalent term in other geospatial specifications.| quadrant, plot, study site, station, watershed, region, field area, lake, reservoir, sea|
 
+### location_confidence
+|Controlled Vocabulary|Definition|
+|:----------------------------------------------------|:----------------------------------------------------|
+| high | There is high confidence in the location coordinate information provided. |
+| low | There is low confidence in the location coordinate information provided. |
+| unknown | The location confidence is unknown. |
+
 ### alt_coordinate_reference_system
-You can use any [EPSG code](https://epsg.io/) identified by its URL, below are common examples. For custom CRS, use [WKT format](https://docs.ogc.org/is/18-010r11/18-010r11.pdf) (pdf). For local CRS, representation in a WKT format is preferred; however, you can also use the option “local” and provide additional details in the notes field, e.g., the origin (0,0) geo-referenced coordinates.
+You can use any [EPSG code](https://epsg.io/) identified by its URL, below are common examples. For custom CRS, use [WKT format](https://docs.ogc.org/is/18-010r11/18-010r11.pdf) (pdf). For local CRS, representation in a WKT format is preferred; however, you can also use the option “local” and provide additional details in the notes term, e.g., the origin (0,0) geo-referenced coordinates.
 |Controlled Vocabulary|Definition|
 |:----------------------------------------------------|:----------------------------------------------------|
 | https://epsg.io/104602 | ESRI:104602 NAD 1983 (3D) |
@@ -31,7 +39,7 @@ You can use any [EPSG code](https://epsg.io/) identified by its URL, below are c
 | https://epsg.io/6933 | EPSG:6933 WGS 84 / NSIDC EASE-Grid 2.0 Global |
 | https://epsg.io/3995 | EPSG:3995 WGS 84 / Arctic Polar Stereographic |
 | https://epsg.io/3413 | EPSG:3413 WGS 84 / NSIDC Sea Ice Polar Stereographic North |
-| local | A local CRS that may or may not be geo-referenced. Provide details in the notes field. Example: 10x10 grid within a plot that are referenced with grid cells identified by A-J along one axis and 1-10 along the other axis. |
+| local | A local CRS that may or may not be geo-referenced. Provide details in the notes term. Example: 10x10 grid within a plot that are referenced with grid cells identified by A-J along one axis and 1-10 along the other axis. |
 
 ### alt_coordinate_unit
 The `alt_coordinate_unit` controlled vocabulary is based on the [Unified Code of Unified Measurements (UCUM)](https://ucum.org/ucum).
@@ -40,7 +48,7 @@ The `alt_coordinate_unit` controlled vocabulary is based on the [Unified Code of
 | meter | meter; UCUM Code: m |
 | feet | feet (international); UCUM Code: [ft_i] |
 | degree | decimal degree; UCUM Code: deg | 
-| other | The alternate coordinate unit is not in the predefined list. Provide the alternate coordinate unit in the notes field. | 
+| other | The alternate coordinate unit is not in the predefined list. Provide the alternate coordinate unit in the notes term. | 
 
 ### elevation_datum
 The elevation_datum controlled vocabulary is based upon [CUASHI VerticalDatumCV](https://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=VerticalDatumCV).
@@ -52,7 +60,7 @@ The elevation_datum controlled vocabulary is based upon [CUASHI VerticalDatumCV]
 | NGVD29 | National Geodetic Vertical Datum of 1929 |
 | WGS84 | World Geodetic System 1984, [ESPG:4979](https://epsg.io/4979) vertical component |
 | unknown | The elevation datum is unknown. |
-| other | The elevation datum is known, but not in the predefined list. Provide the elevation datum in the notes field. |
+| other | The elevation datum is known, but not in the predefined list. Provide the elevation datum in the notes term. |
 
 ### vertical_position_reference
 |Controlled Vocabulary|Definition|
@@ -63,4 +71,4 @@ The elevation_datum controlled vocabulary is based upon [CUASHI VerticalDatumCV]
 | water_surface | surface of a water body (e.g., lake, river, stream) |
 | mean_sea_level | mean sea level |
 | unknown | The vertical position reference is unknown. |
-| other | The vertical position reference is known, but not in the predefined list. Provide the vertical position reference in the notes field. |
+| other | The vertical position reference is known, but not in the predefined list. Provide the vertical position reference in the notes term. |

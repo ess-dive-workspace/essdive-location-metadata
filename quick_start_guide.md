@@ -24,10 +24,15 @@ Report the information below in a csv with the term names in the first row. Name
 ### `location_shape`
 For `location_shape`, enter the physical geometry that the data values best represent for that location. For a full list of example descriptors, see [Instructions](instructions.md).
 
-<img width="597" height="374" alt="Screenshot 2026-06-02 at 8 41 25 PM" src="https://github.com/user-attachments/assets/8e7d7d0c-f3df-4fd2-aada-72bfad66b828" />
+<img width="537" height="365" alt="Screenshot 2026-08-17 at 10 43 43 AM" src="https://github.com/user-attachments/assets/6fce4c86-23d0-40da-8d60-8ad13890bcd0" />
 
 ### `location_description`
 Enter a brief description of the location, using the example descriptors above when possible (more terms listed in [Instructions](instructions.md)). E.g., 5x5m grassland plot on the north-facing hillslope.
+
+### `location_confidence`
+Enter the confidence for the location coordinate information provided within the `latitude`, `longitude`, `alt_coordinate_x`, and `alt_coordinate_y` terms. 
+
+Coordinates obtained from highly accurate geolocation tools (e.g., Trimble), phone GPS, or satellite imagery are typically considered high confidence. Coordinates estimated from landmark descriptions or political boundaries (e.g., sample was taken in Alameda County, CA) are considered low confidence.
 
 ### Include as many optional terms as relevant to your dataset. 
 

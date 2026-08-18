@@ -45,11 +45,11 @@ In some cases, the position of the location may not be accurately known, for exa
 ## Elevation and vertical position
 `elevation` is the height of the ground surface at the location relative to a standardized datum, typically sea level. If `elevation` is provided, the `elevation_datum` must be specified using the controlled vocabulary.
 
-`vertical_position` is the height / altitude or depth above a local reference, typically the ground or water surface. If the `vertical_position_reference` is not the ground surface, it must be specified.
+`vertical_position` and `vertical_position_interval` capture a location's height / altitude or depth relative to a local reference, typically the ground or water surface. If the `vertical_position_reference` is not the ground surface, it must be specified.
 
 Distances above the reference (heights) are positive and those below the reference (depths) are negative.
 
-Location points that have a vertical position should be listed with separate unique identifiers, unless specifically instructed otherwise in another reporting format.
+Location points that have a vertical position or interval should be listed with separate unique identifiers, unless specifically instructed otherwise in another reporting format.
 
 ## Point locations (point)
 The controlled vocabulary "point" for `location_shape` should be used for observation or samples representing a physical space best represented by a single position. This includes most sensor-based observations and collected samples that represent a limited physical volume.

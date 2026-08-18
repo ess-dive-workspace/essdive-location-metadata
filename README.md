@@ -11,6 +11,8 @@ The Location Metadata v2.0.0 reporting format is designed to provide AI-Ready lo
   1. **Read** the [quick start guide](quick_start_guide.md) and [instructions](instructions.md) to understand how to fill out the template.
   2. **Review** the [terminology guide](term_guide.md) and [controlled vocabularies](controlled_vocabulary.md) to understand requirements and definitions used in the templates.
   3. **Download** a blank copy of the [reporting format template](template_locations.csv).
+     - Remove terms that are not applicable to your data.
+     - Fill in the template.
   4. **Save** your completed locations metadata template as a CSV file and upload to ESS-DIVE as part of your dataset.
 
 ## Updates in v2.0.0

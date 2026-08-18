@@ -26,6 +26,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 - [location_alias](#location_alias)
 - [parent_location_id](#parent_location_id)
 - [measurement_method](#measurement_method)
+- [location_information_source](#location_information_source)
 - [location_supplemental_file_name](#location_supplemental_file_name)
 - [notes](#notes)
 
@@ -79,7 +80,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|degree|
 |definition|Latitude of the location, in decimal degrees and in a coordinate reference system with WGS84 datum. Provide latitude in +/- notation, rather than North/South notation.|
 |example|37.8749|
-|additional guidance|Use `latitude` if the x coordinate of the position is measured in degrees in a coordinate reference system (CRS) with datum WGS84; otherwise use the `alt_coordinate_*` terms. For a `location_shape` of "point," the `latitude` value is considered the actual location. For a location with a `location_shape` of "curve" or "surface", the `latitude` value is considered a representative point (e.g., center point of region/shape). Report decimal places to the correct resolution of the instrument used to make the measurement and the characteristics of the location. For reference, 5 decimal places in decimal degrees is on the order of 1 meter in the mid-tropics, with smaller distances towards the poles, and longer distances toward the equator. The resolution of the measurement can depend on the instrument (e.g., cell phone, high-precision GPS) and the location (e.g., open areas with limited obstruction, mountainous areas, forested areas, cell phone coverage). There are multiple EPSG codes with WGS84 datum. `latitude` will be exported with [EPSG:4326](https://epsg.io/4326). |
+|additional guidance|Use `latitude` if the x coordinate of the position is measured in degrees in a coordinate reference system (CRS) with datum WGS84; otherwise use the `alt_coordinate_*` terms. For a `location_shape` of "point," the `latitude` value is considered the actual location. For a location with a `location_shape` of "curve" or "surface", the `latitude` value is considered a representative point (e.g., center point of region/shape).<br><br> Report decimal places to the correct resolution of the instrument used to make the measurement and the characteristics of the location. For reference, 5 decimal places in decimal degrees is on the order of 1 meter in the mid-tropics, with smaller distances towards the poles, and longer distances toward the equator. The resolution of the measurement can depend on the instrument (e.g., cell phone, high-precision GPS) and the location (e.g., open areas with limited obstruction, mountainous areas, forested areas, cell phone coverage).<br><br> There are multiple EPSG codes with WGS84 datum. `latitude` will be exported with [EPSG:4326](https://epsg.io/4326). |
 
 ### longitude
 |term|`longitude`|
@@ -89,7 +90,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit| degree |
 |definition|Longitude of the location, in decimal degrees and in a coordinate reference system with WGS84 datum. Provide longitude in +/- notation, rather than East/West notation.|
 |example|-122.2528|
-|additional guidance|Use `longitude` if the y coordinate of position is measured in degrees in a coordinate reference system with datum WGS84; otherwise use the `alt_coordinate_*` variables. For a `location_shape` of "point," the longitude value is considered the actual location. For a location with a `location_shape` of "curve" or "surface", the `longitude` value is considered a representative point (e.g., center point of region/shape). Report decimal places to the correct resolution of the instrument used to make the measurement and the characteristics of the location. For reference, 5 decimal places in decimal degrees is on the order of 1 meter in the mid-tropics, with smaller distances towards the poles, and longer distances toward the equator. The resolution of the measurement can depend on the instrument (e.g., cell phone, high-precision GPS) and the location (e.g., open areas with limited obstruction, mountainous areas, forested areas, cell phone coverage). There are multiple EPSG codes with WGS84 datum. `longitude` will be exported with [EPSG:4326](https://epsg.io/4326). |
+|additional guidance|Use `longitude` if the y coordinate of position is measured in degrees in a coordinate reference system with datum WGS84; otherwise use the `alt_coordinate_*` variables. For a `location_shape` of "point," the longitude value is considered the actual location. For a location with a `location_shape` of "curve" or "surface", the `longitude` value is considered a representative point (e.g., center point of region/shape).<br><br> Report decimal places to the correct resolution of the instrument used to make the measurement and the characteristics of the location. For reference, 5 decimal places in decimal degrees is on the order of 1 meter in the mid-tropics, with smaller distances towards the poles, and longer distances toward the equator. The resolution of the measurement can depend on the instrument (e.g., cell phone, high-precision GPS) and the location (e.g., open areas with limited obstruction, mountainous areas, forested areas, cell phone coverage).<br><br> There are multiple EPSG codes with WGS84 datum. `longitude` will be exported with [EPSG:4326](https://epsg.io/4326). |
 
 ### location_confidence
 |term|`location_confidence`|
@@ -159,7 +160,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|The accuracy for the location coordinate information provided within the `latitude`, `longitude`, `alt_coordinate_x`, `alt_coordinate_y`, and `location_coordinates` terms.|
 |example|+/- 2 centimeters|
-|additional guidance|Often this is a numerical estimate of accuracy from the tool you are using. This can also be estimated based on expert knowledge of the surrounding geographic features. Other examples include: +/- 0.05 degrees; accurate within meters.|
+|additional guidance|Often this is a numerical estimate of accuracy from the tool used to acquire the location coordinates. This can also be estimated based on expert knowledge of the surrounding geographic features. Other examples include: +/- 0.05 degrees; accurate within meters.|
 
 ### elevation
 |term|`elevation`|
@@ -197,9 +198,9 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|formatted text, bottom position:top position|
 |unit|meter|
-|definition|A height / altitude (positive numbers) or depth (negative) interval that a location covers (curves or surfaces) or that is represented by the location (points) relative to the ground surface, unless a different reference is specified in `vertical_position_reference`. One `vertical_position_interval` is allowed for each location.|
+|definition|A height / altitude (positive numbers) or depth (negative numbers) interval that a location covers (curve or surface) or that is represented by the location (point) relative to the ground surface, unless a different reference is specified in `vertical_position_reference`. One `vertical_position_interval` is allowed for each location.|
 |example|-0.1:0|
-|additional guidance|`vertical_position_interval` should be used for locations with shape curve, like soil cores or depth intervals for soil moisture measurements. A `vertical_position_interval` may be provided for point location shapes to indicate a representative depth or height range. For example, a soil sample may be taken from a depth range. Note: take care to report the bottom and top position correctly, for example, a depth interval of 0-5cm below the ground surface is reported as -0.05:0.|
+|additional guidance|`vertical_position_interval` should be used for locations with curve location shapes, like soil cores, or depth intervals for soil moisture measurements. A `vertical_position_interval` may be provided for point location shapes to indicate a representative depth or height range. For example, a soil sample may be taken from a depth range. Note: take care to report the bottom and top position correctly, for example, a depth interval of 0-5cm below the ground surface is reported as -0.05:0.|
 
 ### vertical_position_reference
 |term|`vertical_position_reference`|
@@ -241,14 +242,24 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |example|Garmin eTrex 10|
 |additional guidance|Additional methods could include: cell phone, etc.|
 
+### location_information_source
+|term|`location_information_source`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|optional|
+|format|free text|
+|unit|N/A|
+|definition|The source of location information if not directly measured. Sources should be as well defined as possible and may include paper DOIs / citation, URLs, agency names, or names of files that are included in the dataset.|
+|example|well_log_5524.pdf|
+|additional guidance|If different sources were used for different parts of the location information, indicate which source is for what term(s).<br><br>Additional examples include: <br>- https://doi.org/10.15485/1660962 <br> - USGS Water Data API for monitoring locations https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items?f=json&lang=en-US&limit=10000&properties=id,agency_code,monitoring_location_name,site_type,hydrologic_unit_code,altitude,altitude_accuracy,vertical_datum,time_zone_abbreviation,uses_daylight_savings,revision_note&skipGeometry=false&offset=0&agency_code=USGS&bbox=-106.7,38.85,-106.5,39.0 (accessed on 2026-08-17)<br> - latitude and longitude from SWRCB State Water Resources Control Board (https://www.waterboards.ca.gov/); elevation from Google Earth |
+
 ### location_supplemental_file_name
 |term|`location_supplemental_file_name`|
 |:----------------------------------------------------|:----------------------------------------------------|
 |requirement|optional|
 |format|ree text; semicolon whitespace delimiter|
 |unit|N/A|
-|definition|Supplemental file(s) containing additional context or information regarding the location.|
-|example|well_log_5524.pdf|
+|definition|Supplemental file(s) containing additional context or information regarding the location. File(s) must be included in the dataset.|
+|example|location_field_notes.pdf; plot_2b.jpeg; sensor_layout.pdf|
 |additional guidance|These file(s) could include source information (e.g., for synthesized locations) and additional descriptive information not captured in other reporting format terms. If more than one file is listed, they should be separated by a semicolon and space.|
 
 ### notes

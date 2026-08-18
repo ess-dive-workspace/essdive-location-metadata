@@ -16,7 +16,7 @@ The `location_shape` controlled vocabulary is based on the [Open Geospatial Cons
 |Controlled Vocabulary|Definition|Examples|
 |:-----------------|:-----------------|:-----------------|
 | point | 0-Dimension geometry of a point. |sample, temperature sensor, stream gauge, water quality station, weather station, tree, shrub, fungal fruiting body |
-| curve | 1-Dimension geometry, presenting the continuous image of a straight, curved, or segmented line. Line and line string are equivalent terms in other geospatial specifications.| transect, stream reach, flight line, ship track, gradient, well, borehole, depth interval, tower, depth profile, canopy profile, stream, river |
+| curve | 1-Dimension geometry, presenting the continuous image of a straight, curved, or segmented line. Line and line string are equivalent terms in other geospatial specifications.| transect, stream reach, flight line, ship track, gradient, well, borehole, depth interval, soil core, tower, depth profile, canopy profile, stream, river |
 | surface | Enclosed, single 2-Dimension geometry, presenting the continuous image of an area. Polygon is an equivalent term in other geospatial specifications.| quadrant, plot, study site, station, watershed, region, field area, lake, reservoir, sea|
 
 ### location_confidence

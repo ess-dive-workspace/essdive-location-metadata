@@ -23,7 +23,7 @@ The location reporting format should **not** be used for the following:
 - An actual or representative x / y position with respect to the earth's surface.
 - Designating the location as a point, curve (line), or surface (polygon).
 - Providing a short location description that includes example descriptors when applicable (see [Location Description](#location-description) section below).
-- Designation of the location confidence (high or low).
+- Designating the location confidence as high, low, or unknown.
 - When publishing location metadata on ESS-DIVE, include the following:
     - Within the File Level Metadata file, the standard for each location metadata reporting format related file should be **"ESS-DIVE Location v2"**.
     - Include the keyword **"ESS-DIVE Location Metadata Reporting Format"** within the dataset metadata Keywords section.
@@ -35,12 +35,12 @@ For a CRS with WGS84 datum, use the `longitude` / `latitude` terms in decimal de
 
 For all other CRS, all four `alt_coordinate_*` terms must be entered. For `alt_coordinate_reference_system`:
 - For registered geo-referenced CRSs, use the EPSG URL in the predefined controlled vocabulary list or at https://epsg.io/
-- If a custom CRS is used, enter it in WKT format (pdf).
+- If a custom CRS is used, enter it in [WKT format](https://docs.ogc.org/is/18-010r11/18-010r11.pdf) (pdf).
 - Non-geo-referenced location information can be provided (e.g., local Cartesian). Where possible, include a geo-referenced origin in the WKT definition, or a parent feature that is geo-referenced.
 
 For non-point locations (see below), the same CRS must be used for the required representative x / y coordinates as the optional `location_coordinates`.
 
-In some cases, the position of the location may not be accurately known, for example historical records that indicate landmarks or political boundaries (a county). A `latitude` / `longitude` or x / y coordinate should be estimated and the `location_confidence` listed as low. 
+In some cases, the position of the location may not be accurately known, for example historical records that indicate landmarks or political boundaries (a county). A `latitude` / `longitude` or x / y coordinate should be estimated and the `location_confidence` listed as low. See term guide and controlled vocabulary for more guidance.
 
 ## Elevation and vertical position
 `elevation` is the height of the ground surface at the location relative to a standardized datum, typically sea level. If `elevation` is provided, the `elevation_datum` must be specified using the controlled vocabulary.
@@ -77,8 +77,8 @@ Coordinates that define the curve or surface polygon can also be optionally prov
    - Surface: [[[-121.50, 38.58],[-121.48, 38.59],[-121.46, 38.60],[-121.50, 38.58]]]. The first and last coordinates must be the same to close the polygon. The order of points defining the polygon are counter-clockwise.
   
 2. **Option 2:** Within a separate file of the following types. The file name must end in “_locations.{ext}”. The file name(s) must also be listed in the File Level Metadata (FLMD) file with `ESS-DIVE Location v2` entered in the FLMD’s standard term.
-   - json: following the [GeoJSON format RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Note: per the specification only use for WGS84 horizontal datum and WGS 84 reference ellipsoid for elevation datum. The `location_id` must be in the id geojson term. Only geometry types Point, LineString, and Polygon are supported.
-   - kml / kmz: the `location_id` must be in the name term of a placemark element. Only geometry types Point, LineString, and Polygon are supported.
+   - json: following the [GeoJSON format RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Note: per the specification only use for WGS84 horizontal datum and WGS 84 reference ellipsoid for elevation datum. The `location_id` must be in the geojson term `id`. Only geometry types Point, LineString, and Polygon are supported.
+   - kml / kmz: the `location_id` must be in the `name` term of a `placemark` element. Only geometry types Point, LineString, and Polygon are supported.
   
 ## Location Description
 A short description of the location should be provided in the `location_description` term. When possible, include descriptors like those in the table below.

@@ -40,4 +40,4 @@ Coordinates obtained from highly accurate geolocation tools (e.g., Trimble), pho
 
 ### See [Term Guide](term_guide.md) and [Instructions](instructions.md) for additional details.
 
-## To publish files following this Location Metadata reporting format on ESS-DIVE, see Minimum Requirements in the [Instructions](instructions.md).
+### To publish files following this Location Metadata reporting format on ESS-DIVE, see Minimum Requirements in the [Instructions](instructions.md).

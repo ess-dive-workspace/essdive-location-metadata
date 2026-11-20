@@ -1,9 +1,9 @@
 # ESS-DIVE Reporting Format for Location Metadata v2.0.0
-This reporting format is currently **under revision**. If you are interested in reviewing and providing feedback, please reach out to ESS-DIVE at ess-dive-support _at_ lbl.gov.
+
 ## About the Reporting Format
 ESS-DIVE's Location Metadata reporting format provides metadata about point and non-point locations.
 
-This reporting format was developed by synthesizing location requirements from ESS-DIVE's existing reporting formats. We also considered 12 other locations-related standards, conventions, and guidelines, to determine which elements would constitute a sufficient and applicable metadata for earth science research.
+This reporting format was developed by synthesizing location requirements from ESS-DIVE's existing reporting formats. We considered other locations-related standards, conventions, and guidelines, to determine which elements would constitute a sufficient and applicable metadata for earth science research.
 
 The Location Metadata v2.0.0 reporting format is designed to provide AI-Ready location information, as it has structure that can be validated; it is machine-readable; and it uses standard terms and controlled vocabularies.  
 
@@ -16,7 +16,15 @@ The Location Metadata v2.0.0 reporting format is designed to provide AI-Ready lo
   4. **Save** your completed locations metadata template as a CSV file and upload to ESS-DIVE as part of your dataset.
 
 ## Updates in v2.0.0
-In May 2026, the Location Metadata Reporting Format was revised to expand support for non-point locations and non-WGS84 coordinate reference systems, revise reporting format terms to snake_case, retire excess optional terms, and address feedback from early adopters of the reporting format.
+In November 2026, the Location Metadata reporting format was updated to expand support for non-point locations and non-WGS84 coordinate reference systems, revise terms to snake_case, retire excess optional terms, and address feedback from early adopters. The changes in v2.0.0 include:
+- Renamed all terms to snake_case.
+- Added support for non-point locations (curves and surfaces) via the new required `location_shape` term.
+- Added support for non-WGS84 coordinate reference systems via new `alt_coordinate_x`, `alt_coordinate_y`, `alt_coordinate_reference_system`, and `alt_coordinate_unit` terms.
+- Added new required and conditionally required terms: `location_confidence`, `elevation_datum`; `latitude` and `longitude` are now conditionally required (required when WGS84 coordinates are provided).
+- Retired eight optional terms: `Submission_Contact_Name`, `Submission_Contact_Email`, `UTC_Offset`, `Location_DateTime_Start`, `Location_Date_End`, `Institution`, `Country`, and `Projection`.
+- Added a standalone controlled vocabulary document covering six terms: `location_shape`, `location_confidence`, `alt_coordinate_reference_system`, `alt_coordinate_unit`, `elevation_datum`, and `vertical_position_reference`.
+- Added a quick start guide and example template.
+- Restructured the template to a single clean header row with snake_case column names; removed the Excel version.
 
 ## How to contribute
 We encourage users to contribute to this reporting format. Please submit any comments or suggestions via a [GitHub issue](https://github.com/ess-dive-workspace/essdive-location-metadata/issues/new/choose) or by emailing ESS-DIVE support at ess-dive-support *at* lbl.gov  

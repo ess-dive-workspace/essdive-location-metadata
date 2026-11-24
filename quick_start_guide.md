@@ -8,10 +8,10 @@
 ## Minimum requirements:
 Report the information below in a csv with the term names in the first row. Name the file “locations.csv” or with the suffix "_locations.csv".
 
-An example [csv template](/example_template_locations.csv) is provided.
+An [example csv template](/example_template_locations.csv) is provided.
 ### `location_id`
 - The location identifier must be unique within the dataset and ideally is unique within a project.
-- Recommendation: Use only letter, number, dash, or underscore characters
+- Recommendation: Use only letter, number, hyphen, or underscore characters
 
 ### x / y coordinates - 2 options
 1. Use `longitude` & `latitude` if you are using WGS84 datum (e.g. most cell phones, google earth). Use decimal degrees with positive for N/E and negative for S/W.

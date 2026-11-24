@@ -1,20 +1,89 @@
-# Location metadata instructions
+# Instructions
 
-The locations metadata reporting format is intended to help researchers compile a minimal set of metadata about point locations.
+The Location Metadata reporting format should be used when there are data values in the dataset that refer to the same locations. Location information can be provided for the physical feature being observed or sampled, as well as for entities that organize related locations both in real and synthetic environments (e.g., models).
 
-To begin using the format, we recommend that users first read through the reporting format’s [terminology guide](term_list/guide.md). The guide provides names, definitions, applicable units, and examples for each reporting format element that you will find in the reporting format templates.
+Common earth science point and non-point location information is supported.
 
-After reviewing the guide, download a blank copy of the reporting format template. While you can choose to either download a CSV or Excel compatible version of the template, when uploading to ESS-DIVE, **we require that completed location metadata are uploaded in the non-proprietary CSV format**.
+The location reporting format should **not** be used for the following:
+- Observations where coordinates are the data, e.g., terrestrial laser scanning (point clouds)
+- Gridded or raster location information, e.g., model gridded inputs / outputs
 
-Within the FLMD file, the standard for each location metadata reporting format related file should be **ESS-DIVE Location v1**. If submitting your dataset to ESS-DIVE, include the keyword **ESS-DIVE Location Metadata Reporting Format** in the package-level metadata.
+## Resources
+- [Quick Start Guide](quick_start_guide.md)
+- [Term Guide](term_guide.md)
+- [Template](template_locations.csv)
 
-The template includes both required (e.g., `Submission_Contact_Name`) and optional (e.g., `Location_Alias`) fields for you to complete. You are only required to fill out the first 6 elements pictured below. These are also listed as required fields in our guide.
+## Format
+- Comma delimited file (.csv) following the [CSV reporting format](https://github.com/ess-dive-workspace/essdive-csv-structure), except for the Spatial data guidelines. Follow the instructions here in this Locations Metadata reporting format.
+- Term names in the first row
+- File name is “locations.csv” or ends with “_locations.csv”
 
-![Example of spreadsheet with only required fields listed](.gitbook/assets/required.png)
+## Minimum requirements
+- Location identifiers are unique within the dataset.
+- An actual or representative x / y position with respect to the earth's surface.
+- Designating the location as a point, curve (line), or surface (polygon).
+- Providing a short location description that includes example descriptors when applicable (see [Location Description](#location-description) section below).
+- Designating the location confidence as high, low, or unknown.
+- When publishing location metadata on ESS-DIVE, include the following:
+    - Within the File Level Metadata file, the standard for each location metadata reporting format related file should be **"ESS-DIVE Location v2"**.
+    - Include the keyword **"ESS-DIVE Location Metadata Reporting Format"** within the dataset metadata Keywords section.
 
-Once you have filled out the location reporting format template, please delete the first row (which simply provides instructions for filling out the template) as well as the 6th row, and the first column so that your filled out template looks like the one pictured below.
+## Coordinates and Coordinate reference systems (CRS)
+A coordinate reference system (CRS) consists of a datum and optionally a projection. The Locations Metadata reporting format supports geo-rectified and also non-geo-rectified coordinate systems. Use geo-rectified coordinates where available.
 
-![Example of spreadsheet with instructions and examples removed](.gitbook/assets/examples_removed.png)
+For a CRS with WGS84 datum, use the `longitude` / `latitude` terms in decimal degrees. N / E values are positive and S / W values are negative. Most common GPS-based apps use WGS84, i.e., coordinates from your cell phone are likely WGS84.
 
-As you begin to use the reporting format, we encourage you to submit any suggestions you have for improving the template, instructions, or any other repository content via a [GitHub issue](https://github.com/ess-dive-workspace/essdive-location-metadata/issues/new/choose).
+For all other CRS, all four `alt_coordinate_*` terms must be entered. For `alt_coordinate_reference_system`:
+- For registered geo-referenced CRSs, use the EPSG URL in the predefined controlled vocabulary list or at https://epsg.io/
+- If a custom CRS is used, enter it in [WKT format](https://docs.ogc.org/is/18-010r11/18-010r11.pdf) (pdf).
+- Non-geo-referenced location information can be provided (e.g., local Cartesian). Where possible, include a geo-referenced origin in the WKT definition, or a parent feature that is geo-referenced.
+
+For non-point locations (see below), the same CRS must be used for the required representative x / y coordinates as the optional `location_coordinates`.
+
+In some cases, the position of the location may not be accurately known, for example historical records that indicate landmarks or political boundaries (a county). A `latitude` / `longitude` or x / y coordinate should be estimated and the `location_confidence` listed as low. See term guide and controlled vocabulary for more guidance.
+
+## Elevation and vertical position
+`elevation` is the height of the ground surface at the location relative to a standardized datum, typically sea level. If `elevation` is provided, the `elevation_datum` must be specified using the controlled vocabulary.
+
+`vertical_position`, or `vertical_position_top` and `vertical_position_bottom`, capture a location's height / altitude or depth relative to a local reference, typically the ground or water surface. If the `vertical_position_reference` is not the ground surface, it must be specified.
+
+Distances above the reference (heights) are positive and those below the reference (depths) are negative.
+
+Location points that have a vertical position should be listed with separate unique identifiers, unless specifically instructed otherwise in another reporting format.
+
+## Point locations (point)
+The controlled vocabulary "point" for `location_shape` should be used for observation or samples representing a physical space best represented by a single position. This includes most sensor-based observations and collected samples that represent a limited physical volume.
+
+Additionally, a point location can be used to represent the position of a stationary organism. The point should be the position of where the organism is located on the ground surface (e.g. most vegetation like trees, shrubs) or the location of where its representative base is located on a host organism (e.g., moss in a tree canopy). If sub-locations on the organism are important, e.g., a particular height on the trunk of a tree, represent this sub-location as a point with a `parent_location_id` referencing the entire organism.
+
+For point locations, the `longitude` / `latitude` or `alt_coordinate_x` / `alt_coordinate_y` values are the actual physical location of the point.
+
+## Non-point locations (curve, surface)
+Non-point locations are supported by choosing a `location_shape` of curve or surface:
+
+<img width="498" height="101" alt="Screenshot 2026-05-28 at 4 27 36 PM" src="https://github.com/user-attachments/assets/3cf76dab-18c4-4a03-8cf1-898f749130fc"/>
+
+Curves are used when the observation represents a linear physical feature like a stream course or depth interval. They are also used to define a collection of other related locations, like a transect of sampling points or quadrants.
+
+Surfaces are used when observations represent an area defined by a polygon or enclosed area (e.g., rectangle, circle, or environmental boundary), like a study plot, the face of a soil pit, or watershed. A surface can also be used for a collection of locations. For example, a plot demarcated on the ground surface that contains vertical profiles and point observations.
+
+For non-point locations, the `longitude` / `latitude` or `alt_coordinate_x` / `alt_coordinate_y` values are representative points.
+
+For vertical curves, like towers or wells, the representative point should be the position along the curve that is closest to the ground surface or water surface. Indicate otherwise in the `notes` term.
+
+Coordinates that define the curve or surface polygon can also be optionally provided in one of two ways:
+1. **Option 1:** Via the `location_coordinates` term following [geojson format](https://datatracker.ietf.org/doc/html/rfc7946#section-1.3):
+   - Curves: [[-121.50, 38.58],[-121.48, 38.59],[-121.46, 38.60]]. 
+   - Surface: [[[-121.50, 38.58],[-121.48, 38.59],[-121.46, 38.60],[-121.50, 38.58]]]. The first and last coordinates must be the same to close the polygon. The order of points defining the polygon are counter-clockwise.
+  
+2. **Option 2:** Within a separate file of the following types. The file name must end in “_locations.{ext}”. The file name(s) must also be listed in the File Level Metadata (FLMD) file with `ESS-DIVE Location v2` entered in the FLMD’s standard term.
+   - json: following the [GeoJSON format RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Note: per the specification only use for WGS84 horizontal datum and WGS84 reference ellipsoid for elevation datum. The `location_id` must be in the geojson term `id`. Only geometry types Point, LineString, and Polygon are supported.
+   - kml / kmz: the `location_id` must be in the `name` term of a `placemark` element. Only geometry types Point, LineString, and Polygon are supported.
+  
+## Location Description
+A short description of the location should be provided in the `location_description` term. When possible, include descriptors like those in the table below.
+
+<img width="578" height="442" alt="Screenshot 2026-08-17 at 10 40 01 AM" src="https://github.com/user-attachments/assets/59d4b353-87da-4b0e-8423-9fc3b13cf6cc" />
+
+
 

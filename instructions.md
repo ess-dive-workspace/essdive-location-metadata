@@ -45,7 +45,7 @@ In some cases, the position of the location may not be accurately known, for exa
 ## Elevation and vertical position
 `elevation` is the height of the ground surface at the location relative to a standardized datum, typically sea level. If `elevation` is provided, the `elevation_datum` must be specified using the controlled vocabulary.
 
-`vertical_position`, `vertical_position_top`, `vertical_position_bottom` and  capture a location's height / altitude or depth relative to a local reference, typically the ground or water surface. If the `vertical_position_reference` is not the ground surface, it must be specified.
+`vertical_position`, or `vertical_position_top` and `vertical_position_bottom`, capture a location's height / altitude or depth relative to a local reference, typically the ground or water surface. If the `vertical_position_reference` is not the ground surface, it must be specified.
 
 Distances above the reference (heights) are positive and those below the reference (depths) are negative.
 

@@ -21,7 +21,8 @@ In November 2026, the Location Metadata reporting format was updated to expand s
 - Renamed all terms to snake_case.
 - Added support for non-point locations (curves and surfaces) via the new required `location_shape` term.
 - Added support for non-WGS84 coordinate reference systems via new `alt_coordinate_x`, `alt_coordinate_y`, `alt_coordinate_reference_system`, and `alt_coordinate_unit` terms.
-- Added new required and conditionally required terms: `location_confidence` (required), `elevation_datum`  (conditionally required); either `latitude` and `longitude`, or `alt_coordinate_x` and `alt_coordinate_y` are required.
+- Added new required and conditionally required terms: `location_confidence` (required), `elevation_datum`  (conditionally required), `vertical_position_top` (conditionally required) and `vertical_position_bottom` (conditionally required); either `latitude` and `longitude`, or `alt_coordinate_x` and `alt_coordinate_y` are required.
+- Added new optional terms: `location_coordinates`, `location_accuracy`, `vertical_position`, `location_information_source`, and `location_supplemental_file_name`
 - Retired eight optional terms: `Submission_Contact_Name`, `Submission_Contact_Email`, `UTC_Offset`, `Location_DateTime_Start`, `Location_Date_End`, `Institution`, `Country`, and `Projection`.
 - Added controlled vocabularies for six terms (now in a separate document from the term guide): `location_shape`, `location_confidence`, `alt_coordinate_reference_system`, `alt_coordinate_unit`, `elevation_datum`, and `vertical_position_reference`.
 - Added a quick start guide and example template.

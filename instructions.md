@@ -14,7 +14,7 @@ The location reporting format should **not** be used for the following:
 - [Template](template_locations.csv)
 
 ## Format
-- Comma delimited file (.csv) following the [CSV reporting format](https://github.com/ess-dive-workspace/essdive-csv-structure)
+- Comma delimited file (.csv) following the [CSV reporting format](https://github.com/ess-dive-workspace/essdive-csv-structure), except for the Spatial data guidelines. Follow the instructions here in this Locations Metadata reporting format.
 - Term names in the first row
 - File name is “locations.csv” or ends with “_locations.csv”
 
@@ -77,7 +77,7 @@ Coordinates that define the curve or surface polygon can also be optionally prov
    - Surface: [[[-121.50, 38.58],[-121.48, 38.59],[-121.46, 38.60],[-121.50, 38.58]]]. The first and last coordinates must be the same to close the polygon. The order of points defining the polygon are counter-clockwise.
   
 2. **Option 2:** Within a separate file of the following types. The file name must end in “_locations.{ext}”. The file name(s) must also be listed in the File Level Metadata (FLMD) file with `ESS-DIVE Location v2` entered in the FLMD’s standard term.
-   - json: following the [GeoJSON format RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Note: per the specification only use for WGS84 horizontal datum and WGS 84 reference ellipsoid for elevation datum. The `location_id` must be in the geojson term `id`. Only geometry types Point, LineString, and Polygon are supported.
+   - json: following the [GeoJSON format RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946). Note: per the specification only use for WGS84 horizontal datum and WGS84 reference ellipsoid for elevation datum. The `location_id` must be in the geojson term `id`. Only geometry types Point, LineString, and Polygon are supported.
    - kml / kmz: the `location_id` must be in the `name` term of a `placemark` element. Only geometry types Point, LineString, and Polygon are supported.
   
 ## Location Description

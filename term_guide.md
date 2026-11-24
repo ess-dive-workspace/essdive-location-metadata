@@ -21,7 +21,8 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 - [elevation](#elevation)
 - [elevation_datum](#elevation_datum)**
 - [vertical_position](#vertical_position)
-- [vertical_position_interval](#vertical_position_interval)
+- [vertical_position_top](#vertical_position_top)**
+- [vertical_position_bottom](#vertical_position_bottom)**
 - [vertical_position_reference](#vertical_position_reference)
 - [location_alias](#location_alias)
 - [parent_location_id](#parent_location_id)
@@ -192,15 +193,25 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |example|1.5|
 |additional guidance|If a location has multiple vertical positions, provide these as separate location entries. If `vertical_position` is provided for a curve or surface, it will be considered representative.|
 
-### vertical_position_interval
-|term|`vertical_position_interval`|
+### vertical_position_top
+|term|`vertical_position_top`|
 |:----------------------------------------------------|:----------------------------------------------------|
-|requirement|optional|
-|format|formatted text, bottom position:top position|
+|requirement|required conditionally; required if `vertical_position_bottom` is provided|
+|format|numeric|
 |unit|meter|
-|definition|A height / altitude (positive numbers) or depth (negative numbers) interval that a location covers (curve or surface) or that is represented by the location (point) relative to the ground surface, unless a different reference is specified in `vertical_position_reference`. One `vertical_position_interval` is allowed for each location.|
-|example|-0.1:0|
-|additional guidance|`vertical_position_interval` should be used for locations with curve location shapes, like soil cores, or depth intervals for soil moisture measurements. A `vertical_position_interval` may be provided for point location shapes to indicate a representative depth or height range. For example, a soil sample may be taken from a depth range. Note: take care to report the bottom and top position correctly, for example, a depth interval of 0-5cm below the ground surface is reported as -0.05:0.<br><br> When entering a value that begins with a plus (`+`) or minus (`-`) sign in a spreadsheet cell, add a leading apostrophe (`'`) to prevent the spreadsheet software from interpreting the entry as a formula. The apostrophe will typically not display in the cell.|
+|definition|The upper (highest) vertical position of a location, relative to the ground surface unless a different reference is specified in `vertical_position_reference`. Heights/altitudes are represented by positive numbers and depths by negative numbers. For a vertical interval, this is the endpoint closest to or above the ground surface.|
+|example|0|
+|additional guidance|Use `vertical_position_top` together with `vertical_position_bottom` to describe the vertical extent of locations with curve or surface shapes, such as soil cores or depth intervals for soil-moisture measurements. These terms may also be supplied for a point location to indicate its representative vertical range. One `vertical_position_reference` is allowed for each location and applies to both terms. For an interval, `vertical_position_top` should be greater than or equal to `vertical_position_bottom`. For example, a depth interval from 0 to 5 cm below the ground surface is reported as `vertical_position_top`: 0 and `vertical_position_bottom`: -0.05.<br><br> When entering a value that begins with a plus (`+`) or minus (`-`) sign in a spreadsheet cell, add a leading apostrophe (`'`) to prevent the spreadsheet software from interpreting the entry as a formula. The apostrophe will typically not display in the cell.|
+
+### vertical_position_bottom
+|term|`vertical_position_bottom`|
+|:----------------------------------------------------|:----------------------------------------------------|
+|requirement|required conditionally; required if `vertical_position_top` is provided|
+|format|numeric|
+|unit|meter|
+|definition|The lower (lowest) vertical position of a location, relative to the ground surface unless a different reference is specified in `vertical_position_reference`. Heights/altitudes are represented by positive numbers and depths by negative numbers. For a vertical interval, this is the endpoint farthest below the ground surface.|
+|example|-0.1|
+|additional guidance|Use `vertical_position_bottom` together with `vertical_position_top` to describe the vertical extent of locations with curve or surface shapes, such as soil cores or depth intervals for soil-moisture measurements. These terms may also be supplied for a point location to indicate its representative vertical range. One `vertical_position_reference` is allowed for each location and applies to both terms. For an interval, `vertical_position_bottom` should be less than or equal to `vertical_position_top`. For example, a depth interval from 0 to 5 cm below the ground surface is reported as `vertical_position_top`: 0 and `vertical_position_bottom`: -0.05.<br><br> When entering a value that begins with a plus (`+`) or minus (`-`) sign in a spreadsheet cell, add a leading apostrophe (`'`) to prevent the spreadsheet software from interpreting the entry as a formula. The apostrophe will typically not display in the cell.|
 
 ### vertical_position_reference
 |term|`vertical_position_reference`|
@@ -208,7 +219,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|[Controlled vocabulary](https://github.com/ess-dive-workspace/essdive-location-metadata/blob/release-v2.0.0/controlled_vocabulary.md#vertical_position_reference)|
 |unit|N/A|
-|definition|Reference for the `vertical_position` and `vertical_position_interval` terms. If the position is not in reference to the ground surface, a `vertical_position_reference` must be specified.|
+|definition|Reference for the `vertical_position`, `vertical_position_top`, and `vertical_position_bottom` terms. If the position is not in reference to the ground surface, a `vertical_position_reference` must be specified.|
 |example|water_surface|
 |additional guidance|N/A|
 

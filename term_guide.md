@@ -160,7 +160,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|The accuracy for the location coordinate information provided within the `latitude`, `longitude`, `alt_coordinate_x`, `alt_coordinate_y`, and `location_coordinates` terms.|
 |example|+/- 2 centimeters|
-|additional guidance|Often this is a numerical estimate of accuracy from the tool used to acquire the location coordinates. This can also be estimated based on expert knowledge of the surrounding geographic features. Other examples include: +/- 0.05 degrees; accurate within meters.|
+|additional guidance|Often this is a numerical estimate of accuracy from the tool used to acquire the location coordinates. This can also be estimated based on expert knowledge of the surrounding geographic features. Other examples include: +/- 0.05 degrees; accurate within meters.<br><br> When entering a value that begins with a plus (`+`) or minus (`-`) sign in a spreadsheet cell, add a leading apostrophe (`'`) to prevent the spreadsheet software from interpreting the entry as a formula. The apostrophe will typically not display in the cell.|
 
 ### elevation
 |term|`elevation`|
@@ -200,7 +200,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|meter|
 |definition|A height / altitude (positive numbers) or depth (negative numbers) interval that a location covers (curve or surface) or that is represented by the location (point) relative to the ground surface, unless a different reference is specified in `vertical_position_reference`. One `vertical_position_interval` is allowed for each location.|
 |example|-0.1:0|
-|additional guidance|`vertical_position_interval` should be used for locations with curve location shapes, like soil cores, or depth intervals for soil moisture measurements. A `vertical_position_interval` may be provided for point location shapes to indicate a representative depth or height range. For example, a soil sample may be taken from a depth range. Note: take care to report the bottom and top position correctly, for example, a depth interval of 0-5cm below the ground surface is reported as -0.05:0.|
+|additional guidance|`vertical_position_interval` should be used for locations with curve location shapes, like soil cores, or depth intervals for soil moisture measurements. A `vertical_position_interval` may be provided for point location shapes to indicate a representative depth or height range. For example, a soil sample may be taken from a depth range. Note: take care to report the bottom and top position correctly, for example, a depth interval of 0-5cm below the ground surface is reported as -0.05:0.<br><br> When entering a value that begins with a plus (`+`) or minus (`-`) sign in a spreadsheet cell, add a leading apostrophe (`'`) to prevent the spreadsheet software from interpreting the entry as a formula. The apostrophe will typically not display in the cell.|
 
 ### vertical_position_reference
 |term|`vertical_position_reference`|
@@ -228,9 +228,9 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |requirement|optional|
 |format|free text|
 |unit|N/A|
-|definition|A unique location identifier for a related location that is an organizational level above this location (e.g., a plot location could be a `parent_location_id` for a point inside the plot). The identifier can be globally unique or unique within a project. Strongly recommended that only letters, numbers, hyphens, and underscores are used.|
+|definition|A unique location identifier for a related location that is an organizational level above this location (e.g., a plot location could be a `parent_location_id` for a point inside the plot). The identifier can be globally unique or unique within a project, and must be unique within the dataset. Strongly recommended that only letters, numbers, hyphens, and underscores are used.|
 |example|AC-400|
-|additional guidance|All parent location identifiers must be defined as a separate location identifier entry.|
+|additional guidance|All parent location identifiers must be defined as a separate location identifier entry in the locations file.|
 
 ### measurement_method
 |term|`measurement_method`|
@@ -250,7 +250,7 @@ A single asterisk (*) below marks terms that are required. Two asterisks (**) ma
 |unit|N/A|
 |definition|The source of location information if not directly measured. Sources should be as well defined as possible and may include paper DOIs / citation, URLs, agency names, or names of files that are included in the dataset.|
 |example|well_log_5524.pdf|
-|additional guidance|If different sources were used for different parts of the location information, indicate which source is for what term(s).<br><br>Additional examples include: <br>- https://doi.org/10.15485/1660962 <br> - USGS Water Data API for monitoring locations https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items?f=json&lang=en-US&limit=10000&properties=id,agency_code,monitoring_location_name,site_type,hydrologic_unit_code,altitude,altitude_accuracy,vertical_datum,time_zone_abbreviation,uses_daylight_savings,revision_note&skipGeometry=false&offset=0&agency_code=USGS&bbox=-106.7,38.85,-106.5,39.0 (accessed on 2026-08-17)<br> - latitude and longitude from SWRCB State Water Resources Control Board (https://www.waterboards.ca.gov/); elevation from Google Earth |
+|additional guidance|If different sources were used for different parts of the location information, indicate which source is for what term(s).<br><br>Additional examples include: <ul><li> https://doi.org/10.15485/1660962</li><li>USGS Water Data API for monitoring locations https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations/items?f=json&lang=en-US&limit=10000&properties=id,agency_code,monitoring_location_name,site_type,hydrologic_unit_code,altitude,altitude_accuracy,vertical_datum,time_zone_abbreviation,uses_daylight_savings,revision_note&skipGeometry=false&offset=0&agency_code=USGS&bbox=-106.7,38.85,-106.5,39.0 (accessed on 2026-08-17)</li><li>latitude and longitude from SWRCB State Water Resources Control Board (https://www.waterboards.ca.gov/); elevation from Google Earth |
 
 ### location_supplemental_file_name
 |term|`location_supplemental_file_name`|

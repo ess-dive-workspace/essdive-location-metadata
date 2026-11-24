@@ -12,7 +12,7 @@ Controlled vocabularies are available for the following terms:
 ---
 
 ### location_shape
-The `location_shape` controlled vocabulary is based on the [Open Geospatial Consortium Observations and Measurements Standard (OGC 20-082r4 (v3.0)](https://docs.ogc.org/as/20-082r4/20-082r4.html). See [Quick Start Guide](quick_start_guide.md) and [Instructions](instructions.md) for more details.
+The `location_shape` controlled vocabulary is based on the [Open Geospatial Consortium Observations and Measurements Standard (OGC 20-082r4 v3.0)](https://docs.ogc.org/as/20-082r4/20-082r4.html). See [Quick Start Guide](quick_start_guide.md) and [Instructions](instructions.md) for more details.
 |Controlled Vocabulary|Definition|Examples|
 |:-----------------|:-----------------|:-----------------|
 | point | 0-Dimension geometry of a point. |sample, temperature sensor, stream gauge, water quality station, weather station, tree, shrub, fungal fruiting body |
@@ -42,12 +42,12 @@ You can use any [EPSG code](https://epsg.io/) identified by its URL, below are c
 | local | A local CRS that may or may not be geo-referenced. Provide details in the notes term. Example: 10x10 grid within a plot that are referenced with grid cells identified by A-J along one axis and 1-10 along the other axis. |
 
 ### alt_coordinate_unit
-The `alt_coordinate_unit` controlled vocabulary is based on the [Unified Code of Unified Measurements (UCUM)](https://ucum.org/ucum).
+The `alt_coordinate_unit` controlled vocabulary is based on the [Quantities, Units, Dimensions, and Types (QUDT)](https://www.qudt.org/doc/DOC_VOCAB-UNITS.html). The Definition provided for the controlled vocabulary is based upon the QUDT term name.
 |Controlled Vocabulary|Definition|
 |:-----------------|:-----------------|
-| meter | meter; UCUM Code: m |
-| feet | feet (international); UCUM Code: [ft_i] |
-| degree | decimal degree; UCUM Code: deg | 
+| M | Metre (Meter). http://qudt.org/vocab/unit/M |
+| FT | Foot (Feet). http://qudt.org/vocab/unit/FT |
+| DEG | Degree. https://qudt.org/vocab/unit/DEG | 
 | other | The alternate coordinate unit is not in the predefined list. Provide the alternate coordinate unit in the notes term. | 
 
 ### elevation_datum
